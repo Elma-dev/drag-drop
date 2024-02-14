@@ -1,0 +1,13 @@
+<div class="container-fluid vh-100">
+  <div class="row h-100">
+    <div class="col-9" style="background-color: lightgreen;" cdkDropList (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of droppedItems" [innerHTML]="item"></div>
+      <!-- Your content for the second section goes here -->
+      <button type="button" class="btn btn-primary">Primary</button>
+    </div>
+    <div class="col-3" style="background-color: lightblue;" cdkDropList (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of myElements" [innerHTML]="item" cdkDrag (cdkDragStarted)="onStartedDrag($event)" [cdkDragData]="item"></div>
+      <!-- Your content for the first section goes here -->
+    </div>
+  </div>
+</div>
